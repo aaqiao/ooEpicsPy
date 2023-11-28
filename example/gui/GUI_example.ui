@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="caFrame" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>718</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="caMultiLineString" name="camultilinestring_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>500</y>
+     <width>751</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Sans Typewriter</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="plainText">
+    <string/>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(MODULE_NAME)-LOG:MON-MSG</string>
+   </property>
+   <property name="foreground">
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="background">
+    <color>
+     <red>139</red>
+     <green>139</green>
+     <blue>145</blue>
+    </color>
+   </property>
+   <property name="colorMode">
+    <enum>caMultiLineString::Static</enum>
+   </property>
+   <property name="framePresent" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="frameLineWidth" stdset="0">
+    <number>1</number>
+   </property>
+   <property name="fontScaleMode" stdset="0">
+    <enum>caMultiLineString::None</enum>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_39">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>751</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Example Job driven by Commands</string>
+   </property>
+   <widget class="caCartesianPlot" name="cacartesianplot_26">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>281</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="Title" stdset="0">
+     <string notr="true">Waveform of Station 1</string>
+    </property>
+    <property name="TitleX">
+     <string notr="true">Time [us]</string>
+    </property>
+    <property name="TitleY">
+     <string notr="true">Magnitude</string>
+    </property>
+    <property name="channels_1" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:MON-TIME-X;$(MODULE_NAME)-JOBCMDD:MON-WF1</string>
+    </property>
+    <property name="Style_1">
+     <enum>caCartesianPlot::Lines</enum>
+    </property>
+    <property name="symbol_1">
+     <enum>caCartesianPlot::NoSymbol</enum>
+    </property>
+    <property name="color_1">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_2" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="Style_2">
+     <enum>caCartesianPlot::Lines</enum>
+    </property>
+    <property name="color_2">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="channels_3" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="color_3">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_4" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="color_4">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="color_5">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="countNumOrChannel" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="triggerChannel" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>229</red>
+      <green>229</green>
+      <blue>229</blue>
+     </color>
+    </property>
+    <property name="XaxisScaling" stdset="0">
+     <enum>caCartesianPlot::Auto</enum>
+    </property>
+    <property name="YaxisScaling" stdset="0">
+     <enum>caCartesianPlot::Auto</enum>
+    </property>
+    <property name="XaxisLimits">
+     <string notr="true">0;1</string>
+    </property>
+    <property name="YaxisLimits">
+     <string notr="true">0;1</string>
+    </property>
+    <property name="styleSheet" stdset="0">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCartesianPlot" name="cacartesianplot_27">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>20</y>
+      <width>281</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="Title" stdset="0">
+     <string notr="true">Waveform of Station 2</string>
+    </property>
+    <property name="TitleX">
+     <string notr="true">Time [us]</string>
+    </property>
+    <property name="TitleY">
+     <string notr="true">Magnitude</string>
+    </property>
+    <property name="channels_1" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:MON-TIME-X;$(MODULE_NAME)-JOBCMDD:MON-WF2</string>
+    </property>
+    <property name="Style_1">
+     <enum>caCartesianPlot::Lines</enum>
+    </property>
+    <property name="symbol_1">
+     <enum>caCartesianPlot::NoSymbol</enum>
+    </property>
+    <property name="color_1">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_2" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="Style_2">
+     <enum>caCartesianPlot::Lines</enum>
+    </property>
+    <property name="color_2">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="channels_3" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="color_3">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_4" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="color_4">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="color_5">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="countNumOrChannel" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="triggerChannel" stdset="0">
+     <string notr="true"/>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>229</red>
+      <green>229</green>
+      <blue>229</blue>
+     </color>
+    </property>
+    <property name="XaxisScaling" stdset="0">
+     <enum>caCartesianPlot::Auto</enum>
+    </property>
+    <property name="YaxisScaling" stdset="0">
+     <enum>caCartesianPlot::Auto</enum>
+    </property>
+    <property name="XaxisLimits">
+     <string notr="true">0;1</string>
+    </property>
+    <property name="YaxisLimits">
+     <string notr="true">0;1</string>
+    </property>
+    <property name="styleSheet" stdset="0">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_80">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>30</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Get Waveform</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:CMD-GET-WAVEFORM</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_81">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>230</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Compare Acc Volt</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:CMD-COMPARE-ACC-VOLT</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_34">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>250</y>
+      <width>142</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:MON-LARGER</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>212</red>
+      <green>212</green>
+      <blue>212</blue>
+     </color>
+    </property>
+    <property name="colorMode">
+     <enum>caLineEdit::Static</enum>
+    </property>
+    <property name="precision">
+     <number>3</number>
+    </property>
+    <property name="precisionMode">
+     <enum>caLineEdit::Channel</enum>
+    </property>
+    <property name="fontScaleMode" stdset="0">
+     <enum>caLineEdit::None</enum>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="formatType">
+     <enum>caLineEdit::decimal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_232">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>290</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Set Beam Phase (deg):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="caTextEntry" name="catextentry_98">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>290</y>
+      <width>95</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:SET-PHASE-ALL</string>
+    </property>
+    <property name="background">
+     <color>
+      <red>229</red>
+      <green>229</green>
+      <blue>229</blue>
+     </color>
+    </property>
+    <property name="colorMode">
+     <enum>caLineEdit::Static</enum>
+    </property>
+    <property name="precision">
+     <number>3</number>
+    </property>
+    <property name="precisionMode">
+     <enum>caLineEdit::User</enum>
+    </property>
+    <property name="fontScaleMode" stdset="0">
+     <enum>caLineEdit::None</enum>
+    </property>
+    <property name="formatType">
+     <enum>caLineEdit::decimal</enum>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_82">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>280</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Set Beam Phase</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBCMDD:CMD-SET-PHASE-SP</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>230</y>
+      <width>290</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_10">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_230">
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Station 1 Acc Voltage:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="caLineEdit" name="calineedit_32">
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="channel" stdset="0">
+        <string notr="true">$(MODULE_NAME)-JOBCMDD:MON-ACC-VOLT1</string>
+       </property>
+       <property name="foreground">
+        <color>
+         <red>0</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </property>
+       <property name="background">
+        <color>
+         <red>89</red>
+         <green>89</green>
+         <blue>89</blue>
+        </color>
+       </property>
+       <property name="colorMode">
+        <enum>caLineEdit::Static</enum>
+       </property>
+       <property name="precision">
+        <number>3</number>
+       </property>
+       <property name="precisionMode">
+        <enum>caLineEdit::Channel</enum>
+       </property>
+       <property name="fontScaleMode" stdset="0">
+        <enum>caLineEdit::None</enum>
+       </property>
+       <property name="unitsEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="formatType">
+        <enum>caLineEdit::decimal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_231">
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Station 2 Acc Voltage:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="caLineEdit" name="calineedit_33">
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="channel" stdset="0">
+        <string notr="true">$(MODULE_NAME)-JOBCMDD:MON-ACC-VOLT2</string>
+       </property>
+       <property name="foreground">
+        <color>
+         <red>0</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </property>
+       <property name="background">
+        <color>
+         <red>89</red>
+         <green>89</green>
+         <blue>89</blue>
+        </color>
+       </property>
+       <property name="colorMode">
+        <enum>caLineEdit::Static</enum>
+       </property>
+       <property name="precision">
+        <number>3</number>
+       </property>
+       <property name="precisionMode">
+        <enum>caLineEdit::Channel</enum>
+       </property>
+       <property name="fontScaleMode" stdset="0">
+        <enum>caLineEdit::None</enum>
+       </property>
+       <property name="unitsEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="formatType">
+        <enum>caLineEdit::decimal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>349</y>
+     <width>251</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Example Job executed iteratively</string>
+   </property>
+   <widget class="caLed" name="caled_19">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>32</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>true</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>26</number>
+    </property>
+    <property name="ledHeight">
+     <number>16</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-JOBITER:MON-HEART-BEAT</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>349</y>
+     <width>481</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>FSM Example (Traffic Light)</string>
+   </property>
+   <widget class="caLed" name="caled_20">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>32</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>false</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>26</number>
+    </property>
+    <property name="ledHeight">
+     <number>26</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:RED</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>200</red>
+      <green>200</green>
+      <blue>200</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_21">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>40</y>
+      <width>32</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>false</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>26</number>
+    </property>
+    <property name="ledHeight">
+     <number>26</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:YELLOW</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>200</red>
+      <green>200</green>
+      <blue>200</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_22">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>40</y>
+      <width>32</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>false</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>26</number>
+    </property>
+    <property name="ledHeight">
+     <number>26</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:GREEN</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>200</red>
+      <green>200</green>
+      <blue>200</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_83">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>$(MODULE_NAME)-FSMTLGT:START</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_84">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:STOP</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_85">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>80</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:RESET</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>232</red>
+      <green>239</green>
+      <blue>224</blue>
+     </color>
+    </property>
+    <property name="releaseMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_233">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>20</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Current State:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_35">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:CUR-STATE</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>212</red>
+      <green>212</green>
+      <blue>212</blue>
+     </color>
+    </property>
+    <property name="colorMode">
+     <enum>caLineEdit::Static</enum>
+    </property>
+    <property name="precision">
+     <number>3</number>
+    </property>
+    <property name="precisionMode">
+     <enum>caLineEdit::Channel</enum>
+    </property>
+    <property name="fontScaleMode" stdset="0">
+     <enum>caLineEdit::None</enum>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="formatType">
+     <enum>caLineEdit::decimal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_234">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Stay Time:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_36">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>50</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:STAY-TIME</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>212</red>
+      <green>212</green>
+      <blue>212</blue>
+     </color>
+    </property>
+    <property name="colorMode">
+     <enum>caLineEdit::Static</enum>
+    </property>
+    <property name="precision">
+     <number>3</number>
+    </property>
+    <property name="precisionMode">
+     <enum>caLineEdit::Channel</enum>
+    </property>
+    <property name="fontScaleMode" stdset="0">
+     <enum>caLineEdit::None</enum>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="formatType">
+     <enum>caLineEdit::decimal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_235">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>80</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Status (entry, transit, exit):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_23">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>80</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>true</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>16</number>
+    </property>
+    <property name="ledHeight">
+     <number>16</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:ENTRY-OK</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_24">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>80</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>true</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>16</number>
+    </property>
+    <property name="ledHeight">
+     <number>16</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:TRANS-OK</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_25">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>80</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="rectangular">
+     <bool>true</bool>
+    </property>
+    <property name="gradientEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="ledWidth">
+     <number>16</number>
+    </property>
+    <property name="ledHeight">
+     <number>16</number>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(MODULE_NAME)-FSMTLGT:EXIT-OK</string>
+    </property>
+    <property name="falseColor">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+  </widget>
+  <widget class="caLineEdit" name="calineedit_37">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>741</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(MODULE_NAME)-FSMTLGT:FSM-MSG</string>
+   </property>
+   <property name="foreground">
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="background">
+    <color>
+     <red>212</red>
+     <green>212</green>
+     <blue>212</blue>
+    </color>
+   </property>
+   <property name="colorMode">
+    <enum>caLineEdit::Static</enum>
+   </property>
+   <property name="precision">
+    <number>3</number>
+   </property>
+   <property name="precisionMode">
+    <enum>caLineEdit::Channel</enum>
+   </property>
+   <property name="fontScaleMode" stdset="0">
+    <enum>caLineEdit::None</enum>
+   </property>
+   <property name="unitsEnabled">
+    <bool>true</bool>
+   </property>
+   <property name="formatType">
+    <enum>caLineEdit::decimal</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>caTextEntry</class>
+   <extends>caLineEdit</extends>
+   <header>caTextEntry</header>
+  </customwidget>
+  <customwidget>
+   <class>caMessageButton</class>
+   <extends>QPushButton</extends>
+   <header>caMessageButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caFrame</class>
+   <extends>QFrame</extends>
+   <header>caFrame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>caLed</class>
+   <extends>QWidget</extends>
+   <header>caLed</header>
+  </customwidget>
+  <customwidget>
+   <class>caLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>caMultiLineString</class>
+   <extends>QPlainTextEdit</extends>
+   <header>caMultiLineString</header>
+  </customwidget>
+  <customwidget>
+   <class>caCartesianPlot</class>
+   <extends>QFrame</extends>
+   <header>caCartesianPlot</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
