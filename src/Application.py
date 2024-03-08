@@ -25,9 +25,19 @@ def AppThreadFunc(app):
     while True:
         try: 
             jobEnt = app.msgQ.get()
-            jobEnt[0].execute(jobEnt[1], None)
+            job    = jobEnt[0]
+            cmdId  = jobEnt[1]
+            mutex  = jobEnt[2]
+
+            if mutex is not None: mutex.acquire()
+            job.execute(cmdId, None)
+            if mutex is not None: mutex.release()
+
             app.msgQ.task_done()
         except:
+            if mutex is not None:
+                if mutex.locked(): mutex.release()
+
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("Exception in job execution: " + jobEnt[0].jobName + "\n")
             excInfo = sys.exc_info()
@@ -42,15 +52,16 @@ def JobCmdCbFunc(cbArgs):
     cmdPV   = cbArgs[1]["cmd"]              # PV of the command
     cmdId   = cbArgs[1]["cid"]              # id of the command
     extCmd  = cbArgs[1]["extpv"]            # if it is external command or not
+    mutex   = cbArgs[1]["mutex"]            # mutex for job execution
     cmdVal  = cbArgs[-1]                    # command PV value
 
     if extCmd:
         if app.msgQ.empty():                # if there is one command waiting, do not put new
-            app.msgQ.put([job, cmdId])
+            app.msgQ.put([job, cmdId, mutex])
     else:
         if cmdVal == 1:
             if not app.msgQ.full():
-                app.msgQ.put([job, cmdId])
+                app.msgQ.put([job, cmdId, mutex])
 
 # callback function for timer-driven jobs
 def RunPeriodicJob(job):
@@ -87,7 +98,7 @@ class Application:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # register a job object and create the command PV
     # ~~~~~~~~~~~~~~~~~~~~~~~~~       
-    def registJob(self, job, cmdStr = "EXE"):
+    def registJob(self, job, cmdStr = "EXE", mutex = None):
         # check the input
         if not job:
             print("Failed to regist job!")
@@ -105,7 +116,8 @@ class Application:
                                                 "bo",
                                                 "command to execute job"),
                                  "cid": 0,
-                                 "extpv": False})
+                                 "extpv": False,
+                                 "mutex": mutex})
 
         # there are multiple commands for the job
         elif isinstance(cmdStr, list):
@@ -121,13 +133,14 @@ class Application:
                                                     "bo",
                                                     "command to execute job"),
                                      "cid": cmdId,
-                                     "extpv": False})
+                                     "extpv": False,
+                                     "mutex": mutex})
                 cmdId = cmdId + 1
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # register a job object with external trigger PV
     # ~~~~~~~~~~~~~~~~~~~~~~~~~       
-    def registJobExtTrigPV(self, job, extPVList = []):
+    def registJobExtTrigPV(self, job, extPVList = [], mutex = None):
         # check the input
         if not job:
             print("Failed to register job with external trigger PV!")
@@ -142,7 +155,8 @@ class Application:
             self.jobList.append({"job":   job,
                                  "cmd":   extpv,
                                  "cid":   cmdId,
-                                 "extpv": True})
+                                 "extpv": True,
+                                 "mutex": mutex})
             cmdId = cmdId + 1
                 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
