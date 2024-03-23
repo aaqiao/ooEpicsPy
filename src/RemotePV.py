@@ -76,7 +76,7 @@ class RemotePV:
     #   21 :    WRITE_ACCESS
     #   None:   pv not exist (did not find by search)
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
-    def read(self, return_str = False, use_monitor = False):
+    def read(self, return_str = False, use_monitor = False, timeout = 1.0):
         # init the results
         results = [None, None, False, False]
 
@@ -85,7 +85,7 @@ class RemotePV:
             data = self.pv.get_with_metadata(form        = 'time',
                                              as_string   = return_str,
                                              use_monitor = self.enable_mon or use_monitor,
-                                             timeout     = 1.0)
+                                             timeout     = timeout)
             if data is not None:
                 results = [data['value'], 
                            data['timestamp'],

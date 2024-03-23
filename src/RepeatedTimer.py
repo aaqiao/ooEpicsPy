@@ -49,7 +49,11 @@ class RepeatedTimer():
     #       case, the timer is natrally only started after the user callback
     #       function is finished (as in the _timer_cb routine)
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
-    def start(self):
+    def start(self, new_intv = None):
+        # possibly update the interval
+        if new_intv is not None:
+            self.interval = new_intv if new_intv > 1.0e-6 else 1.0
+
         # re-arm the timer
         if not self.timer_waiting:
             self.timer_waiting = True

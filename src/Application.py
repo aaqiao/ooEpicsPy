@@ -209,7 +209,7 @@ class Application:
     # generate necessary files 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     @classmethod
-    def generateSoftIOC(cls, softIOCName, py_cmd = 'python'):
+    def generateSoftIOC(cls, softIOCName, py_cmd = 'python', only_db = False):
         # file names
         cls.softIOCName = softIOCName
         cls.fileName_ss = softIOCName + "_startup.script"
@@ -251,10 +251,11 @@ class Application:
         ssFile.write("iocInit()\n\n")
         ssFile.write("# create the save/restore set\n")
         ssFile.write("< saveRestore.script_save\n\n")
-        ssFile.write("# run the python engine\n")
-        ssFile.write("cd cfg\n")
-        ssFile.write('system "' + py_cmd + ' -i ' + cls.fileName_ex + '"\n')
-        ssFile.write("\n")
+        if not only_db:
+            ssFile.write("# run the python engine\n")
+            ssFile.write("cd cfg\n")
+            ssFile.write('system "' + py_cmd + ' -i ' + cls.fileName_ex + '"\n')
+            ssFile.write("\n")
         ssFile.close()
 
         print("File " + cls.fileName_ss + " created\n")
