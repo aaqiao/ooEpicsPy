@@ -46,7 +46,8 @@ class RemotePV:
         if self.pv is None:
             return False
         else:
-            return (self.pv.status not in {None, 9, 10})  # see read() comments for status code meaning
+            #return (self.pv.status not in {None, 9, 10})  # see read() comments for status code meaning
+            return self.pv.connect(timeout = 0.01)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # read the value of the remote PV
