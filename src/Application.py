@@ -209,7 +209,10 @@ class Application:
     # generate necessary files 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     @classmethod
-    def generateSoftIOC(cls, softIOCName, py_cmd = 'python', only_db = False):
+    def generateSoftIOC(cls, softIOCName, py_cmd        = 'python',
+                                          only_db       = False,
+                                          version       = None,
+                                          release_time  = None):
         # file names
         cls.softIOCName = softIOCName
         cls.fileName_ss = softIOCName + "_startup.script"
@@ -278,6 +281,26 @@ class Application:
         LocalPV.gen_db      (cls.fileName_db)
         LocalPV.gen_srreq   ("cfg/" + cls.softIOCName + "_set.req")
         LocalPV.gen_arch    ("cfg/" + cls.softIOCName + ".config")
+
+        # generate the PV for version and release time
+        ver_str = '0.0.0'
+        rtm_str = '0000-00-00'
+        if (version is not None) and (release_time is not None):
+            ver_str = str(version)
+            rtm_str = str(release_time)
+
+        with open(cls.fileName_db, 'a') as dbFile:
+            dbFile.write('\n\n')
+            dbFile.write('record(stringin, "' + softIOCName + ':VERSION") {\n')
+            dbFile.write('    field(DESC, "version identifier")\n')
+            dbFile.write('    field(PINI, "YES")\n')
+            dbFile.write('    field(VAL , "' + ver_str + '")\n')
+            dbFile.write('}\n')
+            dbFile.write('record(stringin, "' + softIOCName + ':RELEASE-TIME") {\n')
+            dbFile.write('    field(DESC, "release time")\n')
+            dbFile.write('    field(PINI, "YES")\n')
+            dbFile.write('    field(VAL , "' + rtm_str + '")\n')
+            dbFile.write('}\n')
         
         print("Soft IOC " + softIOCName + " generation done!\n")
         
