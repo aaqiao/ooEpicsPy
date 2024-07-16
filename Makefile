@@ -17,4 +17,5 @@ help ::
 clean ::
 	rm -rf __pycache__
 	rm -rf ooepics/__pycache__
+	rm -rf ooepics.egg-info
 	make clean -C example
