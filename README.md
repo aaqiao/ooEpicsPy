@@ -10,6 +10,15 @@
 `ooEpicsPy` depends on the following non-standard Python modules:
 - PyEpics: https://pyepics.github.io/pyepics/
 
+## Installation
+The `ooEpicsPy` software should be installed to your Python environment. Follow the steps below:
+- Clone this repository to your working folder.
+- Check out the tag you want to install, or directly install the head (may contain debug code). 
+- In the top folder where the `setup.py` is stored, execute the command below to make the installation.
+    ```
+    pip install .
+    ```
+
 ## Disclaimer (see the **LICENSE** file)
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE

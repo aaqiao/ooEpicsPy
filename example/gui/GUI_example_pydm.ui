@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>733</width>
+    <height>752</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RF System Simulator</string>
+  </property>
+  <widget class="PyDMLabel" name="PyDMLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>500</y>
+     <width>711</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::RichText</enum>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="channel" stdset="0">
+    <string>ca://${MODULE_NAME}-LOG:MON-MSG</string>
+   </property>
+   <property name="enableRichText" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::String</enum>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_39">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>711</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Example Job driven by Commands</string>
+   </property>
+   <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>341</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="showXGrid">
+     <bool>true</bool>
+    </property>
+    <property name="showYGrid">
+     <bool>true</bool>
+    </property>
+    <property name="backgroundColor">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="yAxes">
+     <stringlist>
+      <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+     </stringlist>
+    </property>
+    <property name="title" stdset="0">
+     <string>Waveform 1</string>
+    </property>
+    <property name="curves">
+     <stringlist>
+      <string>{&quot;y_channel&quot;: &quot;ca://${MODULE_NAME}-JOBCMDD:MON-WF1&quot;, &quot;x_channel&quot;: &quot;ca://${MODULE_NAME}-JOBCMDD:MON-TIME-X&quot;, &quot;plot_style&quot;: null, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;dodgerblue&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2}</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>341</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="showXGrid">
+     <bool>true</bool>
+    </property>
+    <property name="showYGrid">
+     <bool>true</bool>
+    </property>
+    <property name="backgroundColor">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="yAxes">
+     <stringlist>
+      <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+     </stringlist>
+    </property>
+    <property name="title" stdset="0">
+     <string>Waveform 2</string>
+    </property>
+    <property name="curves">
+     <stringlist>
+      <string>{&quot;y_channel&quot;: &quot;ca://${MODULE_NAME}-JOBCMDD:MON-WF2&quot;, &quot;x_channel&quot;: &quot;ca://${MODULE_NAME}-JOBCMDD:MON-TIME-X&quot;, &quot;plot_style&quot;: null, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;dodgerblue&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2}</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>240</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Get Waveform</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:CMD-GET-WAVEFORM</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_230">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>145</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Station 1 Acc Voltage:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_231">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>145</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Station 2 Acc Voltage:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_233">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>300</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Set Beam Phase (deg):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_179">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>240</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>3</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:MON-ACC-VOLT1</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_180">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>260</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:MON-ACC-VOLT2</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_181">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>250</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:MON-LARGER</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_182">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>300</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:SET-PHASE-ALL</string>
+    </property>
+    <property name="displayFormat" stdset="0">
+     <enum>PyDMLineEdit::Decimal</enum>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>270</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Compare Acc. Volt.</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:CMD-COMPARE-ACC-VOLT</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>300</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Set Beam Phase</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBCMDD:CMD-SET-PHASE-SP</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>231</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Example Job executed iteratively</string>
+   </property>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-JOBITER:MON-HEART-BEAT</string>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist>
+      <string>Heart Beat</string>
+     </stringlist>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>340</y>
+     <width>471</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>FSM Example (Traffic Light)</string>
+   </property>
+   <widget class="PyDMPushButton" name="PyDMPushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>84</y>
+      <width>91</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:RESET</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>57</y>
+      <width>91</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:STOP</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_234">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>30</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Current State:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_235">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Stay Time:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_236">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>70</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Status (entry, transit, exit):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_183">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>30</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>3</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:CUR-STATE</string>
+    </property>
+    <property name="displayFormat" stdset="0">
+     <enum>PyDMLineEdit::String</enum>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PyDMLineEdit_184">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>50</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="precision" stdset="0">
+     <number>3</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:STAY-TIME</string>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_8">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:YELLOW</string>
+    </property>
+    <property name="onColor" stdset="0">
+     <color>
+      <red>252</red>
+      <green>233</green>
+      <blue>79</blue>
+     </color>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>238</red>
+      <green>238</green>
+      <blue>236</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_7">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:GREEN</string>
+    </property>
+    <property name="onColor" stdset="0">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>211</red>
+      <green>215</green>
+      <blue>207</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:RED</string>
+    </property>
+    <property name="onColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>238</red>
+      <green>238</green>
+      <blue>236</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>91</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:START</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+    <property name="releaseValue" stdset="0">
+     <string>1</string>
+    </property>
+    <property name="writeWhenRelease" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_3">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>90</y>
+      <width>21</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:TRANS-OK</string>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>239</red>
+      <green>41</green>
+      <blue>41</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>90</y>
+      <width>21</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:EXIT-OK</string>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>239</red>
+      <green>41</green>
+      <blue>41</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_5">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>90</y>
+      <width>21</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${MODULE_NAME}-FSMTLGT:ENTRY-OK</string>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>239</red>
+      <green>41</green>
+      <blue>41</blue>
+     </color>
+    </property>
+    <property name="showLabels" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="bigEndian" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="circles" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="PyDMLineEdit" name="PyDMLineEdit_185">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>711</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="precision" stdset="0">
+    <number>3</number>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="channel" stdset="0">
+    <string>ca://$(MODULE_NAME)-FSMTLGT:FSM-MSG</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_237">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>720</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Release Time:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_238">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>720</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Version:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="PyDMLineEdit" name="PyDMLineEdit_186">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>720</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="precision" stdset="0">
+    <number>3</number>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="channel" stdset="0">
+    <string>ca://${SIOC_NAME}:VERSION</string>
+   </property>
+  </widget>
+  <widget class="PyDMLineEdit" name="PyDMLineEdit_187">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>720</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="precision" stdset="0">
+    <number>3</number>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="channel" stdset="0">
+    <string>ca://${SIOC_NAME}:RELEASE-TIME</string>
+   </property>
+  </widget>
+  <zorder>groupBox_39</zorder>
+  <zorder>PyDMLabel</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>PyDMLineEdit_185</zorder>
+  <zorder>label_237</zorder>
+  <zorder>label_238</zorder>
+  <zorder>PyDMLineEdit_186</zorder>
+  <zorder>PyDMLineEdit_187</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMWaveformPlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.waveformplot</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

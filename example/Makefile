@@ -21,7 +21,8 @@ clean ::
 	rm SGE-CPCL-RTEST1*
 	
 # install soft IOC
-PYTHON3 := /opt/gfa/python-3.10/latest/bin/python
+#PYTHON3 := /opt/gfa/python-3.10/latest/bin/python
+PYTHON3 := python
 
 install ::
 	$(PYTHON3) Install_SoftIOC.py

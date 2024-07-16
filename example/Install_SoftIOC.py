@@ -20,7 +20,7 @@ sIOC.genRunScript(softIOCName)
 
 # generate the soft IOC
 Application.generateSoftIOC(softIOCName, 
-                            py_cmd = '/opt/gfa/python-3.10/latest/bin/python',    # NOTE TO DESIGNER: change the python command as in your system
+                            py_cmd = 'python',  # NOTE TO DESIGNER: change the python command as in your system
                             version = '1.0.0',
                             release_time = 'Jul. 16, 2024')
 
