@@ -8,7 +8,7 @@
 #################################################################
 import time
 
-from Job import *
+from ooepics.Job import *
 from Service_RFStation import *
 
 # =================================

@@ -6,7 +6,7 @@
 #################################################################
 # An example FSM emulating the traffic light
 #################################################################
-from FSMLite import *
+from ooepics.FSMLite import *
 
 # =================================
 # define the class

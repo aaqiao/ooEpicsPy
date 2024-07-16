@@ -6,7 +6,7 @@
 #################################################################
 # The top structure for the soft IOC
 #################################################################
-from Application import *
+from ooepics.Application import *
 
 from Job_CmdDriven import *
 from Job_Iterative import *

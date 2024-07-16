@@ -7,7 +7,7 @@
 # The message logger 
 #################################################################
 import time
-from LocalPV import *
+from ooepics.LocalPV import *
 
 # =================================
 # define the class

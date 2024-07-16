@@ -16,5 +16,5 @@ help ::
 # remove all compiled data
 clean ::
 	rm -rf __pycache__
-	rm -rf src/__pycache__
+	rm -rf ooepics/__pycache__
 	make clean -C example

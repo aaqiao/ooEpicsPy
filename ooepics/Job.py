@@ -7,7 +7,7 @@
 # Python based implementation of Job. This is a base class 
 # -------------------------------------------------
 import time
-from LocalPV import *
+from ooepics.LocalPV import *
 
 class Job:    
     # ~~~~~~~~~~~~~~~~~~~~~~~~~

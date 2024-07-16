@@ -6,8 +6,8 @@
 # -------------------------------------------------
 # Python based implementation of LocalPV
 # -------------------------------------------------
-import RecordTemplate
-from RemotePV import *
+from ooepics.RecordTemplate import generateRecord
+from ooepics.RemotePV import *
 
 class LocalPV:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,12 +116,12 @@ class LocalPV:
         
         # write the PV definitions
         for pvConfig in cls.LPVList:
-            pvStr = RecordTemplate.generateRecord(  pvConfig['pvName'],
-                                                    pvConfig['selItems'],
-                                                    pvConfig['unitStr'],
-                                                    pvConfig['pointNum'],
-                                                    pvConfig['recordType'],
-                                                    pvConfig['descStr'])
+            pvStr = generateRecord( pvConfig['pvName'],
+                                    pvConfig['selItems'],
+                                    pvConfig['unitStr'],
+                                    pvConfig['pointNum'],
+                                    pvConfig['recordType'],
+                                    pvConfig['descStr'])
             dbFile.write(pvStr)
             
         dbFile.close()       

@@ -13,9 +13,9 @@ import queue
 import sys
 import traceback
 
-from RepeatedTimer import *
-from LocalPV import *
-from Job import *
+from ooepics.RepeatedTimer import *
+from ooepics.LocalPV import *
+from ooepics.Job import *
 
 # =================================
 # function for the thread

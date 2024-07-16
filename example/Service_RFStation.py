@@ -10,7 +10,7 @@
 import time
 import numpy as np
 
-from RemotePV import *
+from ooepics.RemotePV import *
 
 # =================================
 # class of service for RF station interaction

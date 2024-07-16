@@ -6,7 +6,7 @@
 #################################################################
 # Example job to execute iteratively
 #################################################################
-from Job import *
+from ooepics.Job import *
 
 class Job_Iterative(Job):
     # ~~~~~~~~~~~~~~~~~~~~~~~~~

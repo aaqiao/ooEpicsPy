@@ -17,8 +17,8 @@ import queue
 import sys
 import traceback
 
-from RepeatedTimer import *
-from LocalPV import *
+from ooepics.RepeatedTimer import *
+from ooepics.LocalPV import *
 
 # =================================
 # basic class for FSM 
