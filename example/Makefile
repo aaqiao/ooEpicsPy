@@ -18,7 +18,7 @@ help ::
 clean ::
 	rm -rf __pycache__	
 	rm -rf cfg
-	rm SGE-CPCL-RTEST1*
+	rm -f SGE-CPCL-RTEST1*
 	
 # install soft IOC
 #PYTHON3 := /opt/gfa/python-3.10/latest/bin/python
