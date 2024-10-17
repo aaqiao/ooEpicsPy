@@ -30,7 +30,7 @@ class LocalPV:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # create the object
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
-    def __init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr):
+    def __init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, enaSR = True):
         # save the input info 
         self.modName    = modStr                # module name
         self.devName    = devStr                # device name
@@ -40,6 +40,7 @@ class LocalPV:
         self.pointNum   = pno                   # number of point
         self.recordType = recTypeStr            # record type
         self.descStr    = descStr               # record description
+        self.enaSR      = enaSR                 # True to enable save/restore
         
         # check the input 
         if self.recordType not in LocalPV.LPVTypes:
@@ -57,7 +58,8 @@ class LocalPV:
                                 "unitStr":      self.unitStr, 
                                 "pointNum":     self.pointNum, 
                                 "recordType":   self.recordType,
-                                "descStr":      self.descStr})   
+                                "descStr":      self.descStr,
+                                "enaSR":        self.enaSR})   
             
         # variables for object
         self.pv = RemotePV(self.pvName, local = True)   # we use RemotePV to access local PV
@@ -149,27 +151,28 @@ class LocalPV:
         
         # write the PV definitions
         for pvConfig in cls.LPVList:
-            if pvConfig['recordType'] in {"ao", "longout"}:
-                srFile.write(pvConfig['pvName'] + "\n")
-                srFile.write(pvConfig['pvName'] + ".HIHI\n")
-                srFile.write(pvConfig['pvName'] + ".HIGH\n")
-                srFile.write(pvConfig['pvName'] + ".LOW\n")
-                srFile.write(pvConfig['pvName'] + ".LOLO\n")
-                srFile.write(pvConfig['pvName'] + ".DRVL\n")
-                srFile.write(pvConfig['pvName'] + ".DRVH\n")
-                srFile.write(pvConfig['pvName'] + ".LSV\n")
-                srFile.write(pvConfig['pvName'] + ".HSV\n")
+            if pvConfig['enaSR']:
+                if pvConfig['recordType'] in {"ao", "longout"}:
+                    srFile.write(pvConfig['pvName'] + "\n")
+                    srFile.write(pvConfig['pvName'] + ".HIHI\n")
+                    srFile.write(pvConfig['pvName'] + ".HIGH\n")
+                    srFile.write(pvConfig['pvName'] + ".LOW\n")
+                    srFile.write(pvConfig['pvName'] + ".LOLO\n")
+                    srFile.write(pvConfig['pvName'] + ".DRVL\n")
+                    srFile.write(pvConfig['pvName'] + ".DRVH\n")
+                    srFile.write(pvConfig['pvName'] + ".LSV\n")
+                    srFile.write(pvConfig['pvName'] + ".HSV\n")
 
-            if pvConfig['recordType'] in {"ai", "longin"}:
-                srFile.write(pvConfig['pvName'] + ".HIHI\n")
-                srFile.write(pvConfig['pvName'] + ".HIGH\n")
-                srFile.write(pvConfig['pvName'] + ".LOW\n")
-                srFile.write(pvConfig['pvName'] + ".LOLO\n")
-                srFile.write(pvConfig['pvName'] + ".LSV\n")
-                srFile.write(pvConfig['pvName'] + ".HSV\n")
+                if pvConfig['recordType'] in {"ai", "longin"}:
+                    srFile.write(pvConfig['pvName'] + ".HIHI\n")
+                    srFile.write(pvConfig['pvName'] + ".HIGH\n")
+                    srFile.write(pvConfig['pvName'] + ".LOW\n")
+                    srFile.write(pvConfig['pvName'] + ".LOLO\n")
+                    srFile.write(pvConfig['pvName'] + ".LSV\n")
+                    srFile.write(pvConfig['pvName'] + ".HSV\n")
 
-            if pvConfig['recordType'] in {"bo", "mbbo", "waveform", "stringout"}:
-                srFile.write(pvConfig['pvName'] + "\n")
+                if pvConfig['recordType'] in {"bo", "mbbo", "waveform", "stringout"}:
+                    srFile.write(pvConfig['pvName'] + "\n")
            
         srFile.close()
         
