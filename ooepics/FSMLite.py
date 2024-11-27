@@ -220,7 +220,7 @@ class FSMLite:
         # get the max try number
         mtry, _, _, status = self.lpv_setMaxTry.read(use_monitor = True)
         if status:
-            if mtry >= 1 and mtry <= 10:
+            if mtry >= 1:
                 self.max_try = mtry
 
         # --------------------
