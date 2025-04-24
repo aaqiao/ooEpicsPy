@@ -17,7 +17,7 @@ class RemotePV:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # create the object
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
-    def __init__(self, pvName, local = False):
+    def __init__(self, pvName, local = False, auto_mon = None):
         # save the info               
         if pvName is None:
             self.pvName = ''
@@ -30,6 +30,7 @@ class RemotePV:
         # variables for object
         self.pv         = None      # object of epics.PV, be created later
         self.enable_mon = False     # indicate if the PV is monitored or not
+        self.auto_mon   = auto_mon
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # create the PV object - will automatically connect
@@ -37,7 +38,7 @@ class RemotePV:
     def create(self):
         if self.pv is None:
             if (self.pvName != '') and (self.pvName != None):
-                self.pv = epics.PV(self.pvName, connection_timeout = 1.0)
+                self.pv = epics.PV(self.pvName, connection_timeout = 1.0, auto_monitor = self.auto_mon)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # check connections tatus
