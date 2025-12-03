@@ -11,7 +11,8 @@
 # generate a record string. The record type support:
 # ao, ai, bo, bi, mbbo, mbbi, longin, longout, stringin, stringout, waveform
 # ~~~~~~~~~~~~~~~~~~~~~~~~~
-def generateRecord(pvName, selItems, unitStr, pointNum, recordType, descStr):
+def generateRecord(pvName, selItems, unitStr, pointNum, recordType, descStr, 
+                   initVal, initProc):
     recStr = '';
     
     # special treat the record type string
@@ -55,6 +56,14 @@ def generateRecord(pvName, selItems, unitStr, pointNum, recordType, descStr):
     if recordType in {'waveform-text'}:
         recStr = recStr + '    field(NELM, "' + str(pointNum) + '")\n'
         recStr = recStr + '    field(FTVL, "CHAR")\n'
+        
+    # set initial value
+    if not initVal is None:
+        recStr = recStr + '    field(VAL, "{}")\n'.format(initVal)
+
+    # set the initial process
+    if initProc:
+        recStr = recStr + '    field(PINI, "YES")\n'
         
     recStr = recStr + '}\n'
      

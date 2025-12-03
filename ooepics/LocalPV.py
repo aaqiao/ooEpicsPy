@@ -30,7 +30,8 @@ class LocalPV:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # create the object
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
-    def __init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, enaSR = True):
+    def __init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, 
+                       enaSR = True, initVal = None, initProc = False)
         # save the input info 
         self.modName    = modStr                # module name
         self.devName    = devStr                # device name
@@ -41,6 +42,8 @@ class LocalPV:
         self.recordType = recTypeStr            # record type
         self.descStr    = descStr               # record description
         self.enaSR      = enaSR                 # True to enable save/restore
+        self.initVal    = initVal               # init value
+        self.initProc   = initProc              # initial process
         
         # check the input 
         if self.recordType not in LocalPV.LPVTypes:
@@ -59,7 +62,9 @@ class LocalPV:
                                 "pointNum":     self.pointNum, 
                                 "recordType":   self.recordType,
                                 "descStr":      self.descStr,
-                                "enaSR":        self.enaSR})   
+                                "enaSR":        self.enaSR,
+                                "initVal":      self.initVal,
+                                "initProc":     self.initProc})   
             
         # variables for object
         self.pv = RemotePV(self.pvName, local = True)   # we use RemotePV to access local PV
@@ -123,7 +128,9 @@ class LocalPV:
                                     pvConfig['unitStr'],
                                     pvConfig['pointNum'],
                                     pvConfig['recordType'],
-                                    pvConfig['descStr'])
+                                    pvConfig['descStr'],
+                                    pvConfig['initVal'],
+                                    pvConfig['initProc'])
             dbFile.write(pvStr)
             
         dbFile.close()       
