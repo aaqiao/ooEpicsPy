@@ -1,172 +1,163 @@
-# ooEpics Class Documentation
+# Class Documentation for `ooepics`
 
-This document provides detailed documentation for the classes and modules within the `ooepics` package.
+This document provides detailed documentation for the classes and functions in the `ooepics` package.
 
-## List of Classes
-- [Application](#class-application)
-- [LocalPV](#class-localpv)
-- [RemotePV](#class-remotepv)
-- [FSMLite](#class-fsmlite)
-- [Job](#class-job)
-- [RepeatedTimer](#class-repeatedtimer)
-- [RecordTemplate](#module-recordtemplate)
+## 1. LocalPV (`LocalPV.py`)
+Implementation of a Local Process Variable (PV). It uses `RemotePV` internally to access the local PV but provides specific configurations for creating records.
 
----
+### Class: `LocalPV`
+#### Methods
+- **`__init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, enaSR=True, initVal=None, initProc=False)`**
+  - Initializes a new LocalPV object and registers it in `LocalPV.LPVList`.
+  - **Parameters:**
+    - `modStr` (str): Module name.
+    - `devStr` (str): Device name.
+    - `valStr` (str): Value name.
+    - `selItems` (list): Items for `mbbi` or `mbbo` records.
+    - `unitStr` (str): Unit string.
+    - `pno` (int): Number of points (elements).
+    - `recTypeStr` (str): Record type (e.g., "ao", "ai", "bo", "waveform").
+    - `descStr` (str): Description string.
+    - `enaSR` (bool, optional): Enable Save/Restore. Defaults to `True`.
+    - `initVal` (any, optional): Initial value.
+    - `initProc` (bool, optional): Initial process. Defaults to `False`.
 
-## Class `Application`
-defined in `Application.py`
+- **`read(self, return_str=False, use_monitor=False)`**
+  - Reads the value of the local PV.
+  - **Returns:** Result from `self.pv.read()`.
 
-The main application class for creating Epics Soft IOCs. It manages tasks (Jobs), periodic executions, and necessary EPICS file generation.
+- **`write(self, value, wait=False, timeout=1.0)`**
+  - Writes a value to the local PV.
 
-### Constructor
-`__init__(self, appName, modName)`
-- **appName** (`str`): Name of the application.
-- **modName** (`str`): Name of the module.
+- **`monitor(self, cbFun=None, cbArgList=None)`**
+  - Sets up a monitor callback for the PV.
 
-### Methods
+- **`get_pv_name(self)`**
+  - Returns the full PV name.
 
-#### `registJob(self, job, cmdStr="EXE", mutex=None)`
-Registers a job to be executed upon a PV command.
-- **job** (`Job`): The Job object to execute.
-- **cmdStr** (`str` or `list`): Command string suffix(es) for the PV. E.g., if "EXE", creates `CMD-EXE`. Can be a list of strings for multiple commands.
-- **mutex** (`threading.Lock`, optional): Mutex to protect job execution.
-
-#### `registJobExtTrigPV(self, job, extPVList=[], mutex=None)`
-Registers a job triggered by external PVs.
-- **job** (`Job`): Job object.
-- **extPVList** (`list` of `RemotePV`): List of external PVs that trigger this job.
-- **mutex**: Mutex for thread safety.
-
-#### `registJobPeriodic(self, job, period_s=1.0)`
-Registers a job to run periodically.
-- **job** (`Job`): Job object.
-- **period_s** (`float`): Period in seconds (min 0.1s).
-
-#### `letGoing(self)`
-Starts the application thread and timer threads. Needs to be called after registration.
-
-#### `generateSoftIOC(cls, softIOCName, py_cmd='python', only_db=False, version=None, release_time=None)`
-**Class Method**. Generates the folder structure, startup scripts, and EPICS database (`.template`) files for the Soft IOC.
-- **softIOCName** (`str`): Name of the IOC.
-- **py_cmd** (`str`): Command to run python (default 'python').
-- **only_db** (`bool`): If True, only generates DB files, no startup script logic.
-- **version**: Optional version string for IOC PV.
-- **release_time**: Optional release time string for IOC PV.
+#### Class Methods
+- **`show(cls)`**: Displays all local PVs.
+- **`init_wfs(cls)`**: Initializes waveform PVs with zeros.
+- **`gen_db(cls, fileName)`**: Generates the EPICS database file (`.db` or `.template`).
+- **`gen_srreq(cls, fileName)`**: Generates the Save/Restore request file.
+- **`gen_arch(cls, fileName)`**: Generates the Archiver configuration file (placeholder).
 
 ---
 
-## Class `LocalPV`
-defined in `LocalPV.py`
+## 2. RemotePV (`RemotePV.py`)
+Python-based implementation of a Remote PV using PyEpics.
 
-Represents a local Process Variable in the Soft IOC. It wraps a `RemotePV` connected to `localhost`.
+### Class: `RemotePV`
+#### Methods
+- **`__init__(self, pvName, local=False, auto_mon=None)`**
+  - Initializes a RemotePV object.
+  - **Parameters:**
+    - `pvName` (str): Name of the PV.
+    - `local` (bool): Flag to indicate if it is a local PV (used for filtering in `show`).
+    - `auto_mon` (bool): Auto monitor setting.
 
-### Constructor
-`__init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, enaSR=True, initVal=None, initProc=False)`
-- **modStr**, **devStr**, **valStr**: Parts of the PV name (`Mod-Dev:Val` or `Mod:Val`).
-- **selItems** (`list`): List of enum strings for `mbbi`/`mbbo` records.
-- **unitStr** (`str`): EGU (Engineering Units).
-- **pno** (`int`): Number of elements (for waveforms).
-- **recTypeStr** (`str`): Record type (e.g., 'ao', 'bi', 'waveform').
-- **descStr** (`str`): Description field.
-- **enaSR** (`bool`): Enable Save/Restore.
-- **initVal**: Initial value.
-- **initProc** (`bool`): Process at initialization (`PINI`).
+- **`create(self)`**
+  - Creates the underlying `epics.PV` object.
 
-### Methods
-- **`read(return_str=False, use_monitor=False)`**: Wrapper for `RemotePV.read()`.
-- **`write(value, wait=False, timeout=1.0)`**: Wrapper for `RemotePV.write()`.
-- **`monitor(cbFun=None, cbArgList=None)`**: Wrapper for `RemotePV.monitor()`.
-- **`gen_db(fileName)`** (Class Method): Generates the EPICS DB file from all defined `LocalPV`s.
-- **`gen_srreq(fileName)`** (Class Method): Generates Save/Restore request file.
+- **`is_connected(self)`**
+  - Checks if the PV is connected.
 
----
+- **`read(self, return_str=False, use_monitor=False, timeout=1.0)`**
+  - Reads the PV value, timestamp, severity, and status.
+  - **Returns:** `[value, timestamp, severity_ok, status_ok]`
 
-## Class `RemotePV`
-defined in `RemotePV.py`
+- **`write(self, value, wait=False, timeout=1.0)`**
+  - Writes a value to the PV.
 
-Wrapper around `epics.PV` to handle channel access.
+- **`monitor(self, cbFun=None, cbArgList=None)`**
+  - Sets up a callback for value changes.
 
-### Constructor
-`__init__(self, pvName, local=False, auto_mon=None)`
-- **pvName** (`str`): Full PV name.
-- **local** (`bool`): Flag indicating if it is local.
-- **auto_mon**: Auto monitor setting for pyepics.
-
-### Methods
-- **`create()`**: creates the underlying `epics.PV` object.
-- **`read(return_str=False, use_monitor=False, timeout=1.0)`**: Returns `[value, timestamp, severity, status]`.
-    - `severity`: True if severity == 0 (No Alarm), else False.
-    - `status`: True if status is normal (not basic comm errors), else False.
-- **`write(value, wait=False, timeout=1.0)`**: Writes value to PV. Returns `True` on success.
-- **`monitor(cbFun=None, cbArgList=None)`**: Sets up a monitor callback.
-- **`is_connected()`**: Checks connection status.
-- **`connect()`** (Class Method): Batch creates all registered `RemotePV` objects.
+#### Class Methods
+- **`connect(cls)`**: Creates/Connects all registered RemotePVs.
+- **`show(cls, local=False)`**: prints the status and value of all registered PVs.
 
 ---
 
-## Class `FSMLite`
-defined in `FSMLite.py`
+## 3. Application (`Application.py`)
+Manages the application thread, jobs, and communication structure.
 
-Finite State Machine implementation with integrated PV interfaces.
+### Class: `Application`
+#### Methods
+- **`__init__(self, appName, modName)`**
+  - Initializes the application.
 
-### Constructor
-`__init__(self, mod_name='', fsm_name='', timer_intv=1, max_try=3, states=[], state_tr={}, mon_func=None)`
-- **mod_name**, **fsm_name**: Used for naming internal control PVs.
-- **timer_intv** (`float`): Timer interval for the FSM thread.
-- **max_try** (`int`): Max retries for transitions.
-- **states** (`list`): List of state names (strings).
-- **state_tr** (`dict`): Transition Dictionary. format: `{ 'StateName': {'entry': func, 'exit': func, 'transit': func} }`.
-- **mon_func**: Function called when FSM is idle (not running).
+- **`registJob(self, job, cmdStr="EXE", mutex=None)`**
+  - Registers a job and creates a command PV ("CMD-EXE" by default) to trigger it.
 
-### Methods
-- **`start()`**: Starts the FSM (timer and logic).
-- **`stop(reason)`**: Stops the FSM.
-- **`reset()`**: Resets state to initial.
-- **`letGoing()`**: Starts the background thread.
-- **`postMsg(msg)`**: Logs message to stdout and to `FSM-MSG` PV.
-- **`init_state(state_ini)`**: Force sets initial state.
+- **`registJobExtTrigPV(self, job, extPVList=[], mutex=None)`**
+  - Registers a job triggered by external PVs.
 
----
+- **`registJobPeriodic(self, job, period_s=1.0)`**
+  - Registers a job to run periodically using a timer.
 
-## Class `Job`
-defined in `Job.py`
+- **`letGoing(self)`**
+  - Starts the application thread and timers.
 
-Base class for execution units.
+- **`stop(self)`**
+  - Stops the application.
 
-### Constructor
-`__init__(self, modName, jobName)`
+#### Class Methods
+- **`generateSoftIOC(cls, softIOCName, ...)`**: Generates the startup scripts and database files for a Soft IOC.
 
-### Methods
-#### `execute(self, cmdId=0, dataBus=None)`
-**Overridable**. The main logic method.
-- **cmdId**: ID of the command that triggered this execute (useful if multiple commands map to one job).
-- **dataBus**: Context data (usually None in standard `Application` usage).
-- **Returns**: `True` if success.
+#### Functions
+- **`AppThreadFunc(app)`**: Main loop for the application thread, processing the message queue.
+- **`JobCmdCbFunc(cbArgs)`**: Callback for job command PVs.
+- **`RunPeriodicJob(job)`**: Wrapper to execute periodic jobs.
 
 ---
 
-## Class `RepeatedTimer`
-defined in `RepeatedTimer.py`
+## 4. FSMLite (`FSMLite.py`)
+A lightweight Finite State Machine implementation.
 
-Thread-based timer that repeats itself.
+### Class: `FSMLite`
+#### Methods
+- **`__init__(self, mod_name='', fsm_name='', timer_intv=1, max_try=3, states=[], state_tr={}, mon_func=None)`**
+  - Initializes the FSM.
+  - Creates control PVs: `START`, `STOP`, `RESET`, `MAX-TRY`, `CUR-STATE`, `FSM-MSG`, `STAY-TIME`, `ENTRY-OK`, `TRANS-OK`, `EXIT-OK`, `RUNNING`.
 
-### Constructor
-`__init__(self, interval, user_cb, *args, **kwargs)`
-- **interval**: Seconds.
-- **user_cb**: Callback function to execute.
-
-### Methods
-- **`start(new_intv=None)`**: Starts (or restarts) the timer.
-- **`stop()`**: Cancels the timer.
-- **`reset()`**: Resets stop flags.
+- **`letGoing(self)`**: Starts the FSM thread.
+- **`start(self)`**: Starts the FSM (timer and logic).
+- **`stop(self, reason='user command')`**: Stops the FSM.
+- **`reset(self)`**: Resets the FSM to the initial state.
+- **`after(self, dt)`**: Checks if the FSM has stayed in the current state for `dt` seconds.
+- **`init_state(self, state_ini)`**: Forces the FSM to a specific state.
 
 ---
 
-## Module `RecordTemplate`
-defined in `RecordTemplate.py`
+## 5. Job (`Job.py`)
+Base class for jobs executed by the `Application`.
 
-### Function `generateRecord`
-`generateRecord(pvName, selItems, unitStr, pointNum, recordType, descStr, initVal, initProc)`
-Generates the text body for an EPICS `.db` record entry.
-- Returns: `str` containing the record definition.
-- detailed handling for `ao`, `ai` (precision), `mbbo`/`mbbi` (state strings), `waveform` (NELM, FTVL), etc.
+### Class: `Job`
+#### Methods
+- **`__init__(self, modName, jobName)`**
+  - Initializes the Job.
+- **`execute(self, cmdId=0, dataBus=None)`**
+  - Abstract method to be implemented by subclasses. Executes the job logic.
+
+---
+
+## 6. RepeatedTimer (`RepeatedTimer.py`)
+A timer that repeats its execution.
+
+### Class: `RepeatedTimer`
+#### Methods
+- **`__init__(self, interval, user_cb, *args, **kwargs)`**
+  - Initializes the timer.
+- **`start(self, new_intv=None)`**: Starts or restarts the timer.
+- **`stop(self)`**: Stops the timer.
+- **`reset(self)`**: Resets the stop command flag.
+
+---
+
+## 7. RecordTemplate (`RecordTemplate.py`)
+Helper to generate EPICS record definitions.
+
+#### Functions
+- **`generateRecord(pvName, selItems, unitStr, pointNum, recordType, descStr, initVal, initProc)`**
+  - Generates a string containing the database record definition.
+

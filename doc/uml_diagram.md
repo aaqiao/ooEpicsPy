@@ -10,7 +10,8 @@ classDiagram
         +Queue msgQ
         +Thread appThread
         +__init__(appName, modName)
-        +registJob(job, cmdStr)
+        +registJob(job, cmdStr, mutex)
+        +registJobExtTrigPV(job, extPVList, mutex)        
         +registJobPeriodic(job, period)
         +letGoing()
         +generateSoftIOC(softIOCName)
