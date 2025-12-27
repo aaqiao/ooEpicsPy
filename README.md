@@ -19,6 +19,11 @@ The `ooEpicsPy` software should be installed to your Python environment. Follow 
     pip install .
     ```
 
+## Documentation
+- [UML class diagram](doc/uml_diagram.md)
+- [Class documentation](doc/class_documentation.md)
+
+
 ## Disclaimer (see the **LICENSE** file)
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
