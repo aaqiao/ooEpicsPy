@@ -31,7 +31,7 @@ class LocalPV:
     # create the object
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     def __init__(self, modStr, devStr, valStr, selItems, unitStr, pno, recTypeStr, descStr, 
-                       enaSR = True, initVal = None, initProc = False)
+                       enaSR = True, initVal = None, initProc = False):
         # save the input info 
         self.modName    = modStr                # module name
         self.devName    = devStr                # device name
@@ -192,7 +192,3 @@ class LocalPV:
     @classmethod
     def gen_arch(cls, fileName):
         pass
-        
-        
-    
-    
