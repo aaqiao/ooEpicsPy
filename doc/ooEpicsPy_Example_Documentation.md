@@ -292,7 +292,7 @@ sequenceDiagram
 
 **Key Methods**:
 - `execute(cmdId, dataBus)`: Execute the job (must be implemented in derived classes)
-  - `cmdId`: Command identifier (0 for periodic jobs, other values for different commands)
+  - `cmdId`: Command identifier for different commands
   - `dataBus`: Data bus for passing information between jobs
   - Returns: Boolean indicating success status
 
@@ -305,9 +305,9 @@ class MyJob(Job):
     
     def execute(self, cmdId, dataBus):
         # Implement job logic
-        # cmdId: 0 for periodic, 1-N for different commands
+        # cmdId: 0-N for different commands
         # dataBus: Optional data structure
-        return True  # or False on failure
+        return True   # or False on failure
 ```
 
 ---
@@ -1117,7 +1117,7 @@ The framework automatically generates several configuration files:
 ## References
 
 - EPICS Documentation: https://epics.anl.gov/
-- ooEpicsPy Repository: C:/Aqiao/Code_public/ooEpicsPy
+- ooEpicsPy Repository: https://github.com/aaqiao/ooEpicsPy
 - Related Documentation: doc/class_documentation.md, doc/uml_diagram.md
 
 ---
