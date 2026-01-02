@@ -22,7 +22,7 @@ The `ooEpicsPy` software should be installed to your Python environment. Follow 
 ## Documentation
 - [UML class diagram](doc/uml_diagram.md)
 - [Class documentation](doc/class_documentation.md)
-
+- [Example soft IOC documentation](doc/ooEpicsPy_Example_Documentation.md)
 
 ## Disclaimer (see the **LICENSE** file)
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
